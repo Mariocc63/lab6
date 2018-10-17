@@ -36,8 +36,8 @@ exports.create = (req, res) => {
 
     // Create a Anime
     const anime = new Anime({
-        nombre: req.body.title || "Untitled Anime", 
-        genero: req.body.content,
+        nombre: req.body.nombre || "Untitled Anime", 
+        genero: req.body.genero,
         temporadas: req.body.temporadas
     });
 
