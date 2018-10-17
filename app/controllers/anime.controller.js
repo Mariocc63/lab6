@@ -123,22 +123,22 @@ exports.update = (req, res) => {
 
 // Delete a anime with the specified animeId in the request
 exports.delete = (req, res) => {
-    Anime.findByIdAndRemove(req.params.noteId)
-    .then(note => {
-        if(!note) {
+    Anime.findByIdAndRemove(req.params.animeId)
+    .then(anime => {
+        if(!anime) {
             return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
+                message: "Anime not found with id " + req.params.animeId
             });
         }
-        res.send({message: "Note deleted successfully!"});
+        res.send({message: "Anime deleted successfully!"});
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
+                message: "Anime not found with id " + req.params.animeId
             });                
         }
         return res.status(500).send({
-            message: "Could not delete note with id " + req.params.noteId
+            message: "Could not delete anime with id " + req.params.animeId
         });
     });
 };
