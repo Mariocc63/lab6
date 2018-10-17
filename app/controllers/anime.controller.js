@@ -28,9 +28,9 @@ exports.delete = (req, res) => {
 // Create and Save a new anime
 exports.create = (req, res) => {
     // Validate request
-    if(!req.body.content) {
+    if(!req.body.nombre) {
         return res.status(400).send({
-            message: "Anime content can not be empty"
+            message: "Anime name can not be empty"
         });
     }
 
