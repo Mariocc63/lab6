@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const AnimeSchema = mongoose.Schema({
     nombre: String,
     genero: String,
-    temporadas: Number
+    temporadas: String
 }, {
     timestamps: true
 });
