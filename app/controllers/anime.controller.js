@@ -42,7 +42,7 @@ exports.create = (req, res) => {
     });
 
     // Save Anime in the database
-    note.save()
+    anime.save()
     .then(data => {
         res.send(data);
     }).catch(err => {
@@ -54,7 +54,7 @@ exports.create = (req, res) => {
 
 // Retrieve and return all animes from the database.
 exports.findAll = (req, res) => {
-    Note.find()
+    Anime.find()
     .then(animes => {
         res.send(animes);
     }).catch(err => {
