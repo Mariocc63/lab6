@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "CRUD pagina de animes"});
 });
 
 // listen for requests
