@@ -33,7 +33,6 @@ exports.create = (req, res) => {
         temporadas: req.body.temporadas
     });
 
-    // Save Anime in the database
     anime.save()
     .then(data => {
         res.send(data);
@@ -55,8 +54,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-
-// Find a single anime with a animeId
 exports.findOne = (req, res) => {
     Anime.findById(req.params.animeId)
     .then(anime => {
