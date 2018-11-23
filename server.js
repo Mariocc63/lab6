@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+const port = 4000;
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -34,6 +37,6 @@ app.get('/', (req, res) => {
 // Animes routes
 require('./app/routes/anime.routes.js')(app);
 
-app.listen(5000, () => {
-    console.log("Server listening en el puerto 5000");
+app.listen(port, () => {
+    console.log("Server listening en el puerto 4000");
 });
